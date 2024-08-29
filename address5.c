@@ -42,7 +42,7 @@ void end()
 void condition(char chaine[100], int a, int b, int c, int d)
 {
     
-        int x=128, y=192, z=224, w=240, e=255;
+        int x=128, y=192, z=224, w=240, e=256;
         char *get;
     get = getenv("QUERY_STRING");
     if(sscanf(get, "ip=%d.%d.%d.%d", &a, &b, &c, &d)==4)
@@ -68,7 +68,7 @@ void condition(char chaine[100], int a, int b, int c, int d)
         {
             printf("<b>rL'address IP est au Classe de E\n");
         }
-    else if (a>e || b>e || c>e || d>e)
+    else if (a>=e || b>=e || c>=e || d>=e)
         {
             printf("<br>ERREUR!!! Address IP est invalide");
         }
